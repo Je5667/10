@@ -1,7 +1,26 @@
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 void main(void) {
-	char str[30] = "happy C programming";
-	printf("문자열\"%s\"의 길이 : %i", str, strlen(str));
+	
+	char a[30], b[30], c[30];
+	FILE*fp;
+	
+	fp=fopen("sample.txt", "w");
+	
+	printf("input a word:\n");
+	scanf("%s", &a);
+	fprintf(fp,"%s\n", a);
+	
+	printf("input a word:\n");
+	scanf("%s", &b);
+	fprintf(fp,"%s\n",b);
+	
+	printf("input a word:\n");
+	scanf("%s", &c);
+	fprintf(fp,"%s\n",c);
+	
+	fclose(fp);
 }
