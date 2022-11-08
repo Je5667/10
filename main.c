@@ -5,13 +5,14 @@
 
 void main(void){
 	FILE *fp = NULL;
-	char c;
+	char temp[40];
 	fp = fopen("sample.txt", "r");
 	if (fp == NULL)
 	printf("파일을 못열음\n");
 	
-	while ((c=fgetc(fp)) != EOF)
-	putchar(c);
+	while (NULL != fgets(temp, sizeof(temp), fp)){
+	printf("%s", temp);
+}
 	
 	fclose(fp);
 }
