@@ -5,22 +5,22 @@
 
 void main(void) {
 	
-	char a[30], b[30], c[30];
+	char str[30];
 	FILE*fp;
 	
 	fp=fopen("sample.txt", "w");
 	
 	printf("input a word:\n");
-	scanf("%s", &a);
-	fprintf(fp,"%s\n", a);
+	scanf("%s", &str);
+	fprintf(fp,"%s\n",str);
 	
 	printf("input a word:\n");
-	scanf("%s", &b);
-	fprintf(fp,"%s\n",b);
+	scanf("%s", &str);
+	fprintf(fp,"%s\n",str);
 	
 	printf("input a word:\n");
-	scanf("%s", &c);
-	fprintf(fp,"%s\n",c);
+	scanf("%s", &str);
+	fprintf(fp,"%s\n",str);
 	
 	fclose(fp);
 }
