@@ -3,24 +3,15 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-void main(void) {
+void main(void){
+	FILE *fp = NULL;
+	char c;
+	fp = fopen("sample.txt", "r");
+	if (fp == NULL)
+	printf("파일을 못열음\n");
 	
-	char str[30];
-	FILE*fp;
-	
-	fp=fopen("sample.txt", "w");
-	
-	printf("input a word:\n");
-	scanf("%s", &str);
-	fprintf(fp,"%s\n",str);
-	
-	printf("input a word:\n");
-	scanf("%s", &str);
-	fprintf(fp,"%s\n",str);
-	
-	printf("input a word:\n");
-	scanf("%s", &str);
-	fprintf(fp,"%s\n",str);
+	while ((c=fgetc(fp)) != EOF)
+	putchar(c);
 	
 	fclose(fp);
 }
